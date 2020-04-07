@@ -265,7 +265,7 @@ def get_foreign_data(target='', current_timestamp=0):
         '에스와티니': 'eswatini',
         '모리타니아': 'mauritania',
         '르완다': 'rwanda',
-        '세이셸': 'seychelles',
+        '세이쉘': 'seychelles',
         '베냉': 'benin',
         '라이베리아': 'liberia',
         '탄자니아': 'tanzania',
