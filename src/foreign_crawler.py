@@ -290,6 +290,7 @@ def get_foreign_data(target='', current_timestamp=0):
         '시에라리온': 'sierraleone',
         '말라위': 'malawi',
         '남수단': 'southsudan',
+        '상투메프린시페': 'sainttomeprincipe',
         '일본크루즈': 'japan_cruise',
         '팔레스타인': 'palestine',
         '지브롤터': 'gibraltar',
