@@ -324,6 +324,7 @@ def get_foreign_data(target='', current_timestamp=0):
         '북마리아나제도': 'northernmarianaislands',
         '카리브네덜란드': 'caribbeannetherlands',
         '포클랜드제도': 'falklandislands',
+        '생피에르미클롱': 'saintpierreandmiquelon',
         '합계': 'synthesize'
     }
     logger.info('get_foreign_data: declare country_dictionary | country_dictionary=' + str(country_dictionary))
