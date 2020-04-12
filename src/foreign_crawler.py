@@ -154,6 +154,7 @@ def get_foreign_data(target='', current_timestamp=0):
         '모로코': 'morocco',
         '시리아': 'syria',
         '리비아': 'libya',
+        '예멘': 'yemen',
         '미국': 'usa',
         '캐나다': 'canada',
         '브라질': 'brasil',
