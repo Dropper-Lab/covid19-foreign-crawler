@@ -476,7 +476,7 @@ def get_foreign_data(target='', current_timestamp=0):
         report_message += '- WARN: unregistered country name was found -\n\n\n'
         for error in dictionary_error_list[1:]:
             report_message += '---------------------------\n'
-            report_message += f"{error[0]}\n\ncountry_name\n{error[1]}\n"
+            report_message += f"{error[0]}\n\ncountry_name:\n{error[1]}\n"
         report_message += '---------------------------\n'
         report_message += '\n\n\n\n\n'
 
