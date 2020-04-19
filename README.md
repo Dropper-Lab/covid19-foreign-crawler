@@ -11,3 +11,7 @@ The foreign data crawler for COVID19API from Dropper-Lab. with python (Data from
 
 ### v1.0.1
 - Fix an typing error while handling dictionary error.
+
+### v1.0.2
+- Load dictionary from separate file.
+- Log separate files' data.

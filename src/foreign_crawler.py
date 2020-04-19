@@ -1,5 +1,5 @@
 """
-version : v1.0.1
+version : v1.0.2
 
 MIT License
 
@@ -49,7 +49,11 @@ logger.addHandler(fileHandler)
 logger.setLevel(logging.INFO)
 logger.info('every package loaded and start logging')
 
-logger.info('mysql_foreign_property.hostname=' + str(mysql_foreign_property.hostname) + ' | mysql_foreign_property.user=' + str(mysql_foreign_property.user) + ' | mysql_foreign_property.password=' + str(mysql_foreign_property.password) + ' | mysql_foreign_property.database=' + str(mysql_foreign_property.database) + ' | mysql_foreign_property.charset=' + str(mysql_foreign_property.charset))
+logger.info(
+    'mysql_foreign_property.hostname=' + str(mysql_foreign_property.hostname) + ' | mysql_foreign_property.user=' + str(
+        mysql_foreign_property.user) + ' | mysql_foreign_property.password=' + str(
+        mysql_foreign_property.password) + ' | mysql_foreign_property.database=' + str(
+        mysql_foreign_property.database) + ' | mysql_foreign_property.charset=' + str(mysql_foreign_property.charset))
 logger.info('foreign_property.country_dictionary=' + str(foreign_property.country_dictionary))
 
 
@@ -65,7 +69,8 @@ def insert_result(uid, data_list):
     for data in data_list[1:]:
         cursor.execute(
             f"insert into foreign_{data['country']} values({uid}, {data_list[0]}, {data['certified']}, {data['dead']});")
-        logger.info('insert_result: foreign_' + str(data['country']) + ' data inserted | uid=' + str(uid) + ' | data_list[0]' + str(data_list[0]) + ' | data=' + str(data))
+        logger.info('insert_result: foreign_' + str(data['country']) + ' data inserted | uid=' + str(
+            uid) + ' | data_list[0]' + str(data_list[0]) + ' | data=' + str(data))
 
     connection.commit()
     logger.info('insert_result: database connection commited')
@@ -102,14 +107,17 @@ def get_foreign_data(target='', current_timestamp=0):
     datetime_object = datetime.datetime.strptime(str(announced_time), "['%Y', '%m', '%d', '%H']")
     logger.info('get_foreign_data: convert announced time to datetime object | datetime_object=' + str(datetime_object))
     announced_time_unix = int(time.mktime(datetime_object.timetuple())) - 32400
-    logger.info('get_foreign_data: convert datetime object to unix time | announced_time_unix=' + str(announced_time_unix))
+    logger.info(
+        'get_foreign_data: convert datetime object to unix time | announced_time_unix=' + str(announced_time_unix))
 
     raw_table = beautifulsoup_object.findAll('tbody')
     logger.info('get_foreign_data: table picked out | raw_table=' + str(raw_table))
     raw_table_beautifulsoup_object = BeautifulSoup(str(raw_table[0]), 'html.parser')
-    logger.info('get_foreign_data: convert raw table to beautifulsoup object | raw_table_beautifulsoup_object=' + str(raw_table_beautifulsoup_object))
+    logger.info('get_foreign_data: convert raw table to beautifulsoup object | raw_table_beautifulsoup_object=' + str(
+        raw_table_beautifulsoup_object))
     table_data_rows = raw_table_beautifulsoup_object.findAll('tr')
-    logger.info('get_foreign_data: export table data from raw_table_beautifulsoup_object | table_data_rows=' + str(table_data_rows))
+    logger.info('get_foreign_data: export table data from raw_table_beautifulsoup_object | table_data_rows=' + str(
+        table_data_rows))
     table_data_rows.reverse()
     logger.info('get_foreign_data: reverse exported data | table_data_rows=' + str(table_data_rows))
 
@@ -169,13 +177,16 @@ def get_foreign_data(target='', current_timestamp=0):
                     report_level = 2
                 database_error_list[0] = 1
                 database_error_list.append([ex, index_no])
-                logger.info('get_foreign_data: cannot extract country from table data | ex=' + str(ex) + ' | index_no=' + str(index_no))
+                logger.info(
+                    'get_foreign_data: cannot extract country from table data | ex=' + str(ex) + ' | index_no=' + str(
+                        index_no))
         except Exception as ex:
             if report_level < 2:
                 report_level = 2
             convert_error_list[0] = 1
             convert_error_list.append([ex, table_data])
-            logger.info('get_foreign_data: cannot convert table_data to beautifulsoup object | ex=' + str(ex) + ' | table_data=' + str(table_data))
+            logger.info('get_foreign_data: cannot convert table_data to beautifulsoup object | ex=' + str(
+                ex) + ' | table_data=' + str(table_data))
         for table_data, index_no in zip(table_data_rows[1:], range(1, len(table_data_rows))):
             try:
                 table_data_beautifulsoup_object = BeautifulSoup(str(table_data), 'html.parser')
@@ -220,13 +231,15 @@ def get_foreign_data(target='', current_timestamp=0):
                         report_level = 2
                     database_error_list[0] = 1
                     database_error_list.append([ex, index_no])
-                    logger.info('get_foreign_data: cannot extract country from table data | ex=' + str(ex) + ' | index_no=' + str(index_no))
+                    logger.info('get_foreign_data: cannot extract country from table data | ex=' + str(
+                        ex) + ' | index_no=' + str(index_no))
             except Exception as ex:
                 if report_level < 2:
                     report_level = 2
                 convert_error_list[0] = 1
                 convert_error_list.append([ex, table_data])
-                logger.info('get_foreign_data: cannot convert table_data to beautifulsoup object | ex=' + str(ex) + ' | table_data=' + str(table_data))
+                logger.info('get_foreign_data: cannot convert table_data to beautifulsoup object | ex=' + str(
+                    ex) + ' | table_data=' + str(table_data))
     except Exception as ex:
         if report_level < 3:
             report_level = 3
