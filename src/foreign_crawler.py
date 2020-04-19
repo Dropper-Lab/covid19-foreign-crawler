@@ -49,6 +49,9 @@ logger.addHandler(fileHandler)
 logger.setLevel(logging.INFO)
 logger.info('every package loaded and start logging')
 
+logger.info('mysql_foreign_property.hostname=' + str(mysql_foreign_property.hostname) + ' | mysql_foreign_property.user=' + str(mysql_foreign_property.user) + ' | mysql_foreign_property.password=' + str(mysql_foreign_property.password) + ' | mysql_foreign_property.database=' + str(mysql_foreign_property.database) + ' | mysql_foreign_property.charset=' + str(mysql_foreign_property.charset))
+logger.info('foreign_property.country_dictionary=' + str(foreign_property.country_dictionary))
+
 
 def insert_result(uid, data_list):
     logger.info('insert_result: function started')
