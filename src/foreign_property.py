@@ -241,5 +241,6 @@ country_dictionary = {
     '카리브네덜란드': 'caribbeannetherlands',
     '포클랜드제도': 'falklandislands',
     '생피에르미클롱': 'saintpierreandmiquelon',
+    '기타지역영토': 'etc',
     '합계': 'synthesize'
 }
