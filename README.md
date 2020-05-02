@@ -15,3 +15,7 @@ The foreign data crawler for COVID19API from Dropper-Lab. with python (Data from
 ### v1.0.2
 - Load dictionary from separate file.
 - Log separate files' data.
+
+### v1.0.3
+- A little refactor in code.
+- Add three countries in dictionary.
