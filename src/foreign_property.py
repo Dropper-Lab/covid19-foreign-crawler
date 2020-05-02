@@ -156,6 +156,7 @@ country_dictionary = {
     '동티모르': 'easttimor',
     '미얀마': 'myanmar',
     '라오스': 'laos',
+    '타지키스탄': 'tajikistan',
     '호주': 'australia',
     '뉴질랜드': 'newzealand',
     '피지': 'fiji',
