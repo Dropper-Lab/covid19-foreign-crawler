@@ -25,3 +25,6 @@ The foreign data crawler for COVID19API from Dropper-Lab. with python (Data from
 
 ### v1.0.5
 - Modify region name purifier for whitespaces.
+
+### v1.0.6
+- Remove legacy code causing error in region name purifier.
