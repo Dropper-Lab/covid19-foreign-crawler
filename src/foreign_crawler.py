@@ -155,7 +155,8 @@ def get_foreign_data(target='', current_timestamp=0):
                     #  print('[\'foreign_' + foreign_property.country_dictionary[re.sub('[  ]', '', country)], end='\'')
 
                     foreign_data = {
-                        'country': foreign_property.country_dictionary[re.sub('[  ]', '', re.sub('[가-힣]^', '', country))],
+                        'country': foreign_property.country_dictionary[
+                            re.sub('[  ]', '', re.sub('[가-힣]^', '', country))],
                         'certified': int(certified),
                         'dead': int(re.sub('[,명]', '', dead[0])) if dead != [] else 0
                     }
@@ -209,7 +210,8 @@ def get_foreign_data(target='', current_timestamp=0):
                         #  print(',\n\'foreign_' + foreign_property.country_dictionary[re.sub('[  ]', '', country)], end='\'')
 
                         foreign_data = {
-                            'country': foreign_property.country_dictionary[re.sub('[  ]', '', re.sub('[가-힣]^', '', country))],
+                            'country': foreign_property.country_dictionary[
+                                re.sub('[  ]', '', re.sub('[가-힣]^', '', country))],
                             'certified': int(certified),
                             'dead': int(re.sub('[,명]', '', dead[0])) if dead != [] else 0
                         }
