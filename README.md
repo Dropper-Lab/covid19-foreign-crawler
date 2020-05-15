@@ -28,3 +28,7 @@ The foreign data crawler for COVID19API from Dropper-Lab. with python (Data from
 
 ### v1.0.6
 - Remove legacy code causing error in region name purifier.
+
+### v1.0.7
+- Reformat code.
+- Add lesotho in dictionary.
