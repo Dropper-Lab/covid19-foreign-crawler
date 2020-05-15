@@ -209,6 +209,7 @@ country_dictionary = {
     '남수단': 'southsudan',
     '상투메프린시페': 'sainttomeprincipe',
     '코모로': 'comoros',
+    '레소토': 'lesotho',
     '일본크루즈': 'japan_cruise',
     '팔레스타인': 'palestine',
     '지브롤터': 'gibraltar',
